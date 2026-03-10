@@ -26,12 +26,15 @@ public class Grab : MonoBehaviour
 
     private void Start()
     {
+        grabPinch = SteamVR_Actions.default_GrabPinch;
+
         grabPinch.onStateDown += OnGrabPressed; 
         grabPinch.onStateUp += OnGrabReleased;
     }
 
     private void OnGrabPressed(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
+
         foreach (GameObject go in inGrabRange) 
         { 
             Rigidbody rb = go.GetComponent<Rigidbody>();
